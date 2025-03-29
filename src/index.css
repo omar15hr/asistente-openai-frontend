@@ -37,11 +37,28 @@ em {
 }
 
 .chat-container {
-  @apply flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-white opacity-5 h-full p-4;
+  @apply flex flex-col flex-auto flex-shrink-0 rounded-2xl h-full p-4 relative;
+}
+
+.chat-container::before {
+  content: "";
+  @apply absolute inset-0 bg-white rounded-2xl opacity-10;
+  z-index: 0;
 }
 
 .chat-messages {
-  @apply flex flex-col h-full overflow-x-auto mb-4 overflow-scroll;
+  @apply flex flex-col h-full overflow-x-auto mb-4 overflow-scroll relative;
+  z-index: 1; /* Asegura que los mensajes estén por encima del fondo */
+}
+
+.message {
+  @apply bg-white p-4 rounded-lg shadow-md;
+  z-index: 1; /* Asegura que los mensajes no se vean afectados por la opacidad */
+}
+
+.message-logo {
+  @apply w-10 h-10 rounded-full bg-gray-300;
+  z-index: 1; /* Asegura que el logo no se vea afectado por la opacidad */
 }
 
 /* Animations */
