@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { GptMessage } from "../../components/chat-bubbles/GptMessage";
-import { MyMessage } from "../../components/chat-bubbles/MyMessage";
-import { TextMessageBox } from "../../components/chat-input-boxes/TextMessageBox";
-import { TypingLoader } from "../../components/loaders/TypingLoader";
+import { GptMessage } from "../components/chat-bubbles/GptMessage";
+import { MyMessage } from "../components/chat-bubbles/MyMessage";
+import { TextMessageBox } from "../components/chat-input-boxes/TextMessageBox";
+import { TypingLoader } from "../components/loaders/TypingLoader";
 
 interface Message {
   text: string;
   isGpt: boolean;
 }
 
-export function OrthographyPage() {
+export function ChatTemplate() {
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
 
